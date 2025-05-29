@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "response-field1": {
+      "type": "string"
+    },
+    "response-field2": {
+      "type": "string"
+    },
+    "response-field3": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "response-field1",
+    "response-field2",
+    "response-field3"
+  ]
+}

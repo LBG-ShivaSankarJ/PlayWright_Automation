@@ -1,0 +1,44 @@
+{
+  "name": "playwright_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "launch_playwright_report": "npx playwright show-report",
+    "launch_cucumber_report": "start ./cucumber-report/index.html",
+    "all_ui_tests": "npx bddgen --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=local",
+    "tagged_ui_tests": "npx bddgen --tags @tagName1 --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=local",
+    "debug_all_ui_tests": "npx bddgen --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=local --debug",
+    "debug_tagged_ui_tests": "npx bddgen --tags @tagName1 --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=local --debug",
+    "uimode_all_ui_tests": "npx bddgen --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=local --ui",
+    "uimode_tagged_ui_tests": "npx bddgen --tags @tagName1 --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=local --ui",
+    "all_api_tests": "npx bddgen --config configs/api.playwright.config.ts && cross-env ENV_FILE_NAME=.env.api npx playwright test features/api/ --config configs/api.playwright.config.ts --project=local",
+    "tagged_api_tests": "npx bddgen --tags @tagName1 --config configs/api.playwright.config.ts && cross-env ENV_FILE_NAME=.env.api npx playwright test features/api/ --config configs/api.playwright.config.ts --project=local",
+    "debug_all_api_tests": "npx bddgen --config configs/api.playwright.config.ts && cross-env ENV_FILE_NAME=.env.api npx playwright test features/api/ --config configs/api.playwright.config.ts --project=local --debug",
+    "debug_tagged_api_tests": "npx bddgen --tags @tagName1 --config configs/api.playwright.config.ts && cross-env ENV_FILE_NAME=.env.api npx playwright test features/api/ --config configs/api.playwright.config.ts --project=local --debug",
+    "uimode_all_api_tests": "npx bddgen --config configs/api.playwright.config.ts && cross-env ENV_FILE_NAME=.env.api npx playwright test features/api/ --config configs/api.playwright.config.ts --project=local --ui",
+    "uimode_tagged_api_tests": "npx bddgen --tags @tagName1 --config configs/api.playwright.config.ts && cross-env ENV_FILE_NAME=.env.api npx playwright test features/api/ --config configs/api.playwright.config.ts --project=local --ui",
+    "all_mobile_tests": "npx bddgen --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=Mobile_Android",
+    "tagged_mobile_tests": "npx bddgen --tags @tagName1 --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=Mobile_Android",
+    "debug_all_mobile_tests": "npx bddgen --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=Mobile_Android --debug",
+    "debug_tagged_mobile_tests": "npx bddgen --tags @tagName1 --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=Mobile_Android --debug",
+    "uimode_all_mobile_tests": "npx bddgen --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=Mobile_Android --ui",
+    "uimode_tagged_mobile_tests": "npx bddgen --tags @tagName1 --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=Mobile_Android --ui",
+    "grid_execution_edge_131": "npx bddgen --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui SELENIUM_REMOTE_URL=http://appduv8e6f.onprem.cloud.test.group:4444 SELENIUM_REMOTE_CAPABILITIES='{\\\"browserName\\\":\\\"MicrosoftEdge\\\",\\\"browserVersion\\\":\\\"131.0\\\"}' npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=local",
+    "grid_execution_chrome_131": "npx bddgen --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui SELENIUM_REMOTE_URL=http://appduv8e6f.onprem.cloud.test.group:4444 SELENIUM_REMOTE_CAPABILITIES='{\\\"browserName\\\":\\\"chrome\\\",\\\"browserVersion\\\":\\\"131.0\\\"}' npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=local",
+    "grid_execution_chrome_130": "npx bddgen --config configs/ui.playwright.config.ts && cross-env ENV_FILE_NAME=.env.ui SELENIUM_REMOTE_URL=http://appduv8e6f.onprem.cloud.test.group:4444 SELENIUM_REMOTE_CAPABILITIES='{\\\"browserName\\\":\\\"chrome\\\",\\\"browserVersion\\\":\\\"130.0\\\"}' npx playwright test features/ui/ --config configs/ui.playwright.config.ts --project=local",
+    "all_ui_tests_n_launch_report": "npm run all_ui_tests && node node_modules/@qecoe/playwright_automation/dist/setup-files/logging-upgrade-status.js && npm run launch_cucumber_report",
+    "upgrade_coewright": "npm i @qecoe/playwright_automation@latest --save-exact && node node_modules/@qecoe/playwright_automation/dist/setup-files/upgrade-coewright/upgrade-coewright.js "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@qecoe/playwright_automation": "file:../../Users/SankarJShiva(DEVELOP/Release/playwright_automation-1.9.0.tgz",
+    "@types/node": "22.15.24",
+    "cross-env": "7.0.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.51.1"
+  }
+}
